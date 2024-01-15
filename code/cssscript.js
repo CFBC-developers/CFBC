@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const progressCircle = document.getElementById('progress-circle');
     const progressText = document.getElementById('progress-text');
     const counterText = document.getElementById('counter-text');
-    
+    var anotext = document.querySelector("#anotext")
+        
     const options = {
       root: null, // Use the viewport as the root
       rootMargin: '0px',
@@ -106,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function animateProgressBar() {
       let progress = 0;
-      const interval = setInterval(() => {
+      let anoprogress = 2022;
+            const interval = setInterval(() => {
         if (progress >= 100) {
           clearInterval(interval);
         } else {
@@ -114,7 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
           progressCircle.style.transform = `rotate(${(progress / 100) * 360 - 90}deg)`;
           progressText.textContent = `${progress}%`;
           counterText.textContent = `${Math.round((progress / 1) * 1)}万`;
-        }
+          anotext.textContent = `${Math.round((progress / 10) + anoprogress)} 年`;
+                  }
       }, 200);
     }
   });
